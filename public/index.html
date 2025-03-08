@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Chat WebRTC</title>
+</head>
+<body>
+    <h2>Videollamada WebRTC</h2>
+    <video id="localVideo" autoplay playsinline></video>
+    <video id="remoteVideo" autoplay playsinline></video>
+    <button id="startCall">Iniciar Llamada</button>
+
+
+    <div>
+        <h3>Configuración</h3>
+        <input type="text" id="usernameInput" placeholder="Ingresa tu nombre">
+        <button id="changeUsername">Cambiar Nombre</button>
+    </div>
+
+    <div>
+        <h3>Usuarios Conectados</h3>
+        <ul id="userList"></ul>
+    </div>
+
+    <div id="notifications" style="border: 1px solid #ccc; padding: 5px; margin-bottom: 10px; max-height: 100px; overflow-y: auto;">
+        <h3>Notificaciones</h3>
+    </div>
+
+    <button id="shareScreen">Compartir Pantalla</button>
+    <button id="stopScreenShare">Detener Pantalla</button>
+    <video id="screenVideo" autoplay playsinline></video>
+    
+
+    <div id="chatContainer">
+        <h3>Chat</h3>
+        <div id="chatBox" style="border: 1px solid #ccc; height: 200px; overflow-y: scroll; padding: 5px;"></div>
+        <input type="text" id="chatInput" placeholder="Escribe un mensaje..." />
+        <button id="sendMessage">Enviar</button>
+        <br>
+        <input type="file" id="imageInput" accept="image/*">
+        <button id="sendImage">Enviar Imagen</button>
+    </div>
+
+    
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</body>
+</html>
