@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call Heey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="video-section">
+            <video id="localVideo" autoplay playsinline></video>
+            <video id="remoteVideo" autoplay playsinline></video>
+            <video id="screenVideo" autoplay playsinline></video>
+        </div>
+
+        <div class="controls">
+            <button id="startCall">Start Call</button>
+            <button id="shareScreen">Share Screem</button>
+            <button id="stopScreenShare">Stop screem</button>
+            <button id="toggleCamera">Stop Cam</button>
+            <button id="toggleMic">Stop Mic</button>
+        </div>
+
+        <div class="sidebar">
+            <h3>Users</h3>
+            <ul id="userList"></ul>
+
+            <h3>Chat</h3>
+            <div id="chatBox"></div>
+            <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+            <button id="sendMessage">Send</button>
+            <input type="file" id="imageInput" accept="image/*">
+            <button id="sendImage">Send Image</button>
+
+            <h3>Cambiar Nombre</h3>
+            <input type="text" id="usernameInput" placeholder="Nuevo nombre">
+            <button id="changeUsername">Change</button>
+        </div>
+    </div>
+
+    <div id="notifications" class="notifications"></div>
+
+
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="client.js"></script>
+  
+</html>
